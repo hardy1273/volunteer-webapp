@@ -1,0 +1,95 @@
+body{
+    background:  white;
+}
+.thumbnail img{
+    width:100%;
+}
+.thumbnail{
+    padding:0;
+    background: #ececec;
+    color:black;
+  
+    font-family: 'Abel', sans-serif;
+}
+.thumbnail .caption-full{
+    padding:9px;
+    color:black;
+  
+    font-family: 'Abel', sans-serif;
+}
+#delete-form{
+    display: inline;
+   
+}
+#delete-btn{
+    display: inline;
+   
+}
+
+.jumbotron{
+    background:url(https://images.squarespace-cdn.com/content/v1/57cbb057893fc06c8c47b93f/1526716867779-UPC35A8X6EEE5SPW22ZM/ke17ZwdGBToddI8pDm48kPIjA-aOFwV0pPbX1smPfbF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Uav-q_aKivkepejinpoLT0kbtOLKzWY3Jk2zNOiOUZD3gT_hx3k7If7YBZvhxRsGlQ/bigstock-Group-of-Diversity-People-Volu-184396834web.jpg?format=1500w);
+    width: 100%;
+    color: white;
+
+}
+.caption h4{
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+.well{
+
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+.lead{
+    color: black;
+    font-family: 'Abel', sans-serif;
+}
+#name{
+    color:white;
+    font-family: 'Abel', sans-serif;
+}
+#title{
+    color: white;
+    font-family: 'Abel', sans-serif;
+}
+.footer{
+    color: white;
+    background-color: #171717;
+    height: 20%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Abel', sans-serif;
+    font-size: 40px;
+    letter-spacing: 1px;
+    
+  
+
+}
+h1{
+    color: black;
+}
+#about1{
+    color: black;
+    padding: 12px;
+}
+.fx{
+    width: 100%;
+    color:white;
+    height: 10%;
+    background-color: #1c1c1b;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 40px;
+    font-family: 'Abel', sans-serif;
+
+}
+.button1{
+    background-color: #337ab7;
+ 
+}
+#jumb{
+    text-shadow: 2px 2px 5px black;
+}
