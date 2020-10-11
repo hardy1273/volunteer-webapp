@@ -41,7 +41,7 @@ router.get("/register", function(req, res){
             return res.render("register", {error: err.message});
         }
         passport.authenticate("local")(req,res, function(){
-            req.flash("success", "Welcome to Onside! "+ user.username);
+            req.flash("success", "Welcome to Volmatch! "+ user.username);
             res.redirect("/campgrounds");
         });
 
@@ -56,7 +56,7 @@ router.post("/login", passport.authenticate("local", {
     successRedirect:"/campgrounds",
     failureRedirect:"/login",
     failureFlash:true,
-    successFlash:"Welcome to Onside"
+    successFlash:"Welcome to Volmatch"
 }),function(req,res){
 
 });
