@@ -34,7 +34,7 @@ cloudinary.config({
 
 
 
-router.get("/", function(req, res){
+router.get("/campgrounds", function(req, res){
     if(req.query.search){
         const regex= new RegExp(escapeRegex(req.query.search),'gi');
         Campground.find({name:regex}, function(err, allCampgrounds){
