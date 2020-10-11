@@ -80,6 +80,6 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
     console.log("Server Started on Port 3000...");
 });
