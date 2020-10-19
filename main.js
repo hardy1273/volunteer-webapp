@@ -13,18 +13,35 @@ var User=require("./models/user.js")
 var commentRoutes=require("./routes/comments");
 var campgroundRoutes=require("./routes/campground");
 var authRoutes=require("./routes/index");
-var methodOverride=require("method-override")
+var methodOverride=require("method-override");
+const session=require("express-session")
+const MongoStore = require('connect-mongo')(session);
+var dbUrl=process.env.DB_URL
 require('dotenv').config()
- 
+
+
+
 app.use(methodOverride("_method"));
 
 app.use(express.static(__dirname+"/public"))
+
+
 
 //seedDB()
 
 app.use(flash());
 
+var store= new MongoStore({
+    url:dbUrl,
+    secret:"merahogyahai",
+    touchAfter:24 * 60 * 60
+})
+
+store.on("error",function(e){
+    console.log("error is",e)
+})
 app.use(require("express-session")({
+    store,
     secret:"BRUHHHHHHHHHHHHHHHHHH",
     resave:false,
     saveUninitialized:false
@@ -45,11 +62,11 @@ app.use(function(req,res, next ){
     next();
 })
 
-
+//mongodb://localhost:27017/makespp
 
 
 mongoose.Promise=global.Promise;
-mongoose.connect("mongodb://localhost:27017/makespp", {useNewUrlParser: true});
+mongoose.connect(dbUrl, {useNewUrlParser: true});
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -58,21 +75,6 @@ app.set("view engine","ejs");
 
 
 
-//Campground.create(
-    //{
-        //name: "Santiago Bernabeu",
-        //image:"https://aws-tiqets-cdn.imgix.net/images/content/278357c07f4b444798fd7858a0e83452.jpg?auto=format&fit=crop&ixlib=python-1.1.2&q=25&s=46f9235ca62381fdd6a9f246dc3e3943&w=375&h=250&dpr=2.625",
-        //description: "Home to Real Madrid Fc"
-    //},  function(err,campground){
-        //if (err){
-            //console.log(err);
-        //} else {
-            //console.log("Newly created campground:")
-            //console.log(campground);
-        //}
-    //}
-//)
-
 app.use("/",authRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
@@ -80,6 +82,6 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 
-app.listen(process.env.PORT,function(){
+app.listen(3000,process.env.PORT,function(){
     console.log("Server Started on Port 3000...");
 });
