@@ -1,2 +1,4 @@
 
 volunteer-website/
+.env
+node_modules
